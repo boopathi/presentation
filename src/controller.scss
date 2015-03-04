@@ -44,6 +44,18 @@ $n11: $bluegrey;
 		padding: 5px;
 		opacity: 0.5;
 		cursor: pointer;
+		color: white;
+
+		&.edit {
+			background: $red;
+		}
+		&.present {
+			background: $deeppurple;
+		}
+		&.save {
+			background: $green;
+		}
+
 		&:hover {
 			opacity: 1;
 		}

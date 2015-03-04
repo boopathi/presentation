@@ -9,6 +9,6 @@ socket.on('change', function(data) {
 
 window.addEventListener('DOMContentLoaded', function() {
 	remark.create({
-		source: '# Hello world \n---\n # Second Slide'
+		source: '# Hello world'
 	})
 });

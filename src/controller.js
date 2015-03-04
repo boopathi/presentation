@@ -5,6 +5,9 @@ var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 var cx = React.addons.classSet;
 
 var Controls = React.createClass({
+	saveSlides: function() {
+		this.props.saveToDB();
+	},
 	editMode: function() {
 		this.props.mode('edit');
 	},
@@ -13,8 +16,9 @@ var Controls = React.createClass({
 	},
 	render: function() {
 		return <div className='controls'>
-			<div className='c' onClick={this.editMode}>Edit</div>
-			<div className='c' onClick={this.presentMode}>Present</div>
+			<div className='c edit' onClick={this.editMode}>Edit</div>
+			<div className='c present' onClick={this.presentMode}>Present</div>
+			<div className='c save' onClick={this.saveSlides}>Save</div>
 		</div>;
 	}
 });
@@ -114,12 +118,12 @@ var Page = React.createClass({
 	getInitialState: function() {
 		return {
 			currentEdit: null,
-			slides: [],
+			slides: slides,
 			present: false,
 			active: 0,
 		}
 	},
-	changeMode(mode) {
+	changeMode: function(mode) {
 		if(mode === 'present') {
 			this.setState({
 				present: true
@@ -155,11 +159,21 @@ var Page = React.createClass({
 			currentEdit: null,
 		});
 	},
+	saveToDB: function() {
+		socket.emit('save',this.state.slides);
+	},
 	activate: function(n) {
 		this.setState({
 			active: n
 		});
 		socket.emit('change_slide', this.state.slides[n]);
+	},
+	componentWillUnmount: function() {
+	},
+	componentDidMount: function() {
+		socket.on('saved', function() {
+			console.log('Slides saved');
+		});
 	},
 	render: function() {
 		var slides = this.state.slides.map(function(s,i) {
@@ -180,7 +194,7 @@ var Page = React.createClass({
 		}.bind(this));
 		return <div>
 			<div>
-				<Controls mode={this.changeMode} />
+				<Controls mode={this.changeMode} saveToDB={this.saveToDB} />
 			</div>
 			<ReactCSSTransitionGroup transitionName='slide' className='slides'>
 				{slides}

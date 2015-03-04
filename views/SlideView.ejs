@@ -17,7 +17,9 @@
 	<script src="remark.min.js"></script>
 	<script src="/socket.io/socket.io.js"></script>
 	<script>
-		var socket = io('<%= server %>');
+		var url = location.href;
+		var baseURL = url.substring(0, url.indexOf('/', 14));
+		var socket = io(baseURL);
 	</script>
 	<script src="main.js"></script>
 </head>

@@ -9,7 +9,10 @@
 	<script src="vendors.min.js"></script>
 	<script src="/socket.io/socket.io.js"></script>
 	<script>
-		var socket = io('<%= server %>');
+		var url = location.href;
+		var baseURL = url.substring(0, url.indexOf('/', 14));
+		var socket = io(baseURL);
+		var slides = <%- slides %>;
 	</script>
 	<script src="controller.bundle.js"></script>
 </body>
