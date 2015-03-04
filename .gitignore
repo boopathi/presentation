@@ -1,4 +1,5 @@
 node_modules
 *~
 npm-debug.log
-
+vendors.min.js
+*.bundle.js
