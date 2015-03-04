@@ -33,6 +33,17 @@ https://www.youtube.com/watch?v=nuuneB5u9xk
 
 ## Installation
 
++ `npm install`
++ `webpack`
++ `npm start`
+
+## Usage
+
++ Presenter View - "http://localhost:4242/controller" - Add, Edit, Remove, Present slides
++ Listener View - "http://localhost:4242/" - View slides
+
+## TODO
+
 (Work in Progress)
 
 Doesn't work now. Still building this feature.
