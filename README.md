@@ -20,7 +20,7 @@ This uses websockets and when the speaker selects the slide from his view, it te
    |websocket.emit('change_slide')   
    |    |    |    |    |    |    |   
  +-v+ +-v+ +-v+ +-v+ +-v+ +-v+ +-v+  
- |  | |  | |  | |  | |  | |  | |  |  
+ |1 | |2 | |3 | |4 | |5 | |6 | |7 |  
  +--+ +--+ +--+ +--+ +--+ +--+ +--+  
                                      
          CLIENTS / LISTENERS         
