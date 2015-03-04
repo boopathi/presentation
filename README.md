@@ -1,4 +1,4 @@
-# Presenter
+# Presentation
 
 ## Why did I build this ?
 
@@ -28,3 +28,11 @@ This uses websockets and when the speaker selects the slide from his view, it te
 
 ```
 
+## Installation
+
+(Work in Progress)
+
+Doesn't work now. Still building this feature.
+
++ `npm install -g presentation`
++ `presentation ./my-presentation.md`

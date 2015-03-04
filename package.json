@@ -1,24 +1,24 @@
 {
-  "name": "presenter",
+  "name": "presentation",
   "version": "0.0.1",
   "description": "Presentations over network. Beat it",
-  "main": "presenter.js",
+  "main": "server.js",
   "scripts": {
     "start": "node --harmony server.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/boopathi/presenter"
+    "url": "https://github.com/boopathi/presentation"
   },
   "keywords": [
-    "presenter"
+    "presentation"
   ],
   "author": "boopathi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/boopathi/presenter/issues"
+    "url": "https://github.com/boopathi/presentation/issues"
   },
-  "homepage": "https://github.com/boopathi/presenter",
+  "homepage": "https://github.com/boopathi/presentation",
   "dependencies": {
     "css-loader": "^0.9.1",
     "jsx-loader": "^0.12.2",
