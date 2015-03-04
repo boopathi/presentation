@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<title>Presenter | <%= title %></title>
+	<style>
+		@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+		@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+		@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+		body { font-family: 'Droid Serif'; }
+		h1, h2, h3 {
+			font-family: 'Yanone Kaffeesatz';
+			font-weight: normal;
+		}
+		.remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+	</style>
+	<script src="remark.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script>
+		var socket = io('<%= server %>');
+	</script>
+	<script src="main.js"></script>
+</head>
+<body>
+</body>
+</html>
