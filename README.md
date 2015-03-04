@@ -10,7 +10,7 @@ This uses websockets and when the speaker selects the slide from his view, it te
 ## Overview
 
 ### Screencast
-(https://www.youtube.com/watch?v=nuuneB5u9xk)[https://www.youtube.com/watch?v=nuuneB5u9xk]
+https://www.youtube.com/watch?v=nuuneB5u9xk
 
 ```
 +-----------------------------------+
