@@ -1,15 +1,19 @@
 var path = require('path');
 var webpack = require('webpack');
 var Chunk = webpack.optimize.CommonsChunkPlugin;
-var Uglify = webpack.optimize.UglifyJsPlugin;
 module.exports = {
 	entry: {
-		controller: __dirname + '/src/controller.js',
-		vendor: ['react', 'react-ace'],
+		controller: __dirname + '/src/controller.js'
 	},
 	output: {
 		filename: '[name].bundle.js',
 		path: __dirname +'/static',
+		// pathinfo: process.env.NODE_ENV !== 'production',
+	},
+	externals: {
+		'react/addons': 'React',
+		'react': 'React',
+		'brace': 'ace',
 	},
 	module: {
 		loaders: [
@@ -25,9 +29,16 @@ module.exports = {
 			}
 		]
 	},
-	// devtool: '#source-map',
+	devtool: '#source-map',
 	plugins: [
-		new Chunk('vendor', 'vendors.min.js'),
-		new Uglify({ compress: { warnings: false }})
+		new webpack.optimize.UglifyJsPlugin({
+			compress: {
+				warnings: false,
+				dead_code: true,
+				conditionals: true,
+				comparisons: true,
+				unused: true,
+			}
+		})
 	]
 };

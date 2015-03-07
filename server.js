@@ -4,7 +4,7 @@ var http = require('http');
 var koa = require('koa');
 var logger = require('koa-logger');
 var route = require('koa-route');
-var staticDir = require('koa-static');
+var staticDir = require('koa-static-cache');
 var use_ejs = require('koa-ejs');
 
 var port = process.env.PORT || 4242;
@@ -22,7 +22,9 @@ use_ejs(app, {
 });
 app.use(route.get('/', SlideView));
 app.use(route.get('/controller', Controller));
-app.use(staticDir(path.join(__dirname, 'static')))
+app.use(staticDir(path.join(__dirname, 'static'), {
+	maxAge: 365 * 24 * 60 * 60
+}));
 
 var server = http.createServer(app.callback());
 var io = require('socket.io')(server);
@@ -54,6 +56,7 @@ function *Controller() {
 }
 
 // Socket IO stuff
+
 io.on('connection', function(socket) {
 	socket.on('change_slide', function(md) {
 		io.sockets.emit('change', {

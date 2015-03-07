@@ -1,5 +1,5 @@
 var React = require('react/addons');
-var Ace = require('react-ace');
+var Ace = require('./ace');
 var css = require('./controller.scss');
 var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 var cx = React.addons.classSet;
