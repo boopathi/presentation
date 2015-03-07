@@ -1,5 +1,7 @@
 # Presentation
 
+[![Circle CI](https://circleci.com/gh/boopathi/presentation.svg?style=svg)](https://circleci.com/gh/boopathi/presentation) ![David DM](https://david-dm.org/boopathi/presentation.svg)
+
 ## Why did I build this ?
 
 + Sometimes, you want the user to copy some text(usually code) while giving your presentation

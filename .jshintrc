@@ -1,0 +1,7 @@
+{
+  "curly": false,
+  "sub": true,
+  "laxbreak": true,
+  "expr": true,
+  "esnext": true
+}
