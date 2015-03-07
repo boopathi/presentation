@@ -25,7 +25,7 @@ module.exports = {
 			}
 		]
 	},
-	devtool: '#source-map',
+	// devtool: '#source-map',
 	plugins: [
 		new Chunk('vendor', 'vendors.min.js'),
 		new Uglify({ compress: { warnings: false }})

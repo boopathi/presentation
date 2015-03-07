@@ -9,10 +9,25 @@
 
 This uses websockets and when the speaker selects the slide from his view, it tells all the connected clients(listeners) to update the slide.
 
-## Overview
+## Demo
 
-### Screencast
-https://www.youtube.com/watch?v=nuuneB5u9xk
++ https://young-coast-8374.herokuapp.com/controller - Create slides
++ https://young-coast-8374.herokuapp.com/ - Slide Viewer
+
+The slides created here don't persist longer than **10 minutes**.
+
+## Installation
+
++ `npm install`
++ `webpack`
++ `npm start`
+
+## Usage
+
++ Presenter View - "http://localhost:4242/controller" - Add, Edit, Remove, Present slides
++ Listener View - "http://localhost:4242/" - View slides
+
+## Overview
 
 ```
 +-----------------------------------+
@@ -32,17 +47,6 @@ https://www.youtube.com/watch?v=nuuneB5u9xk
          http://speaker_host/          
 
 ```
-
-## Installation
-
-+ `npm install`
-+ `webpack`
-+ `npm start`
-
-## Usage
-
-+ Presenter View - "http://localhost:4242/controller" - Add, Edit, Remove, Present slides
-+ Listener View - "http://localhost:4242/" - View slides
 
 ## TODO
 
