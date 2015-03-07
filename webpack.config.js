@@ -1,6 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var Chunk = webpack.optimize.CommonsChunkPlugin;
+var Uglify = webpack.optimize.UglifyJsPlugin;
 module.exports = {
 	entry: {
 		controller: __dirname + '/src/controller.js',
@@ -24,8 +25,9 @@ module.exports = {
 			}
 		]
 	},
+	devtool: '#source-map',
 	plugins: [
 		new Chunk('vendor', 'vendors.min.js'),
-		// new webpack.optimize.UglifyJsPlugin()
+		new Uglify({ compress: { warnings: false }})
 	]
 };

@@ -4,11 +4,15 @@
   "description": "Presentations over network. Beat it",
   "main": "server.js",
   "scripts": {
+    "postinstall": "./node_modules/.bin/webpack",
     "start": "node --harmony server.js"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/boopathi/presentation"
+  },
+  "engines": {
+    "node": "0.12.0"
   },
   "keywords": [
     "presentation"
@@ -32,6 +36,6 @@
     "sass-loader": "^0.4.0",
     "socket.io": "^1.3.4",
     "style-loader": "^0.8.3",
-    "webpack": "^1.6.0"
+    "webpack": "^1.7.2"
   }
 }
