@@ -10,6 +10,7 @@ ENV PORT 4242
 ADD . /presentation/
 
 RUN npm install
+RUN ./node_modules/.bin/webpack
 
 VOLUME ['/presentation/db']
 
