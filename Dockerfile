@@ -5,7 +5,7 @@ RUN mkdir /presentation
 
 WORKDIR /presentation
 
-ENV PORT 4242
+ENV PORT 80
 
 ADD . /presentation/
 
@@ -14,6 +14,6 @@ RUN ./node_modules/.bin/webpack
 
 VOLUME ['/presentation/db']
 
-EXPOSE 4242
+EXPOSE 80
 
 ENTRYPOINT npm start
