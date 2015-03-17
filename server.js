@@ -10,7 +10,7 @@ var use_ejs = require('koa-ejs');
 var port = process.env.PORT || 4242;
 var app = koa();
 
-var dbfile = __dirname + '/db.json';
+var dbfile = __dirname + '/db/slides.json';
 
 app.use(logger());
 use_ejs(app, {
